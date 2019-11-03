@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Holly_P2 {
+	public class DuplicateCounter {
+		public void count(String dataFile) throws FileNotFoundException{
+			try {
+				String nextWord;
+				HashSet wordCounter = new HashSet<String, Integer>();
+				Scanner scnr = new Scanner(new FileReader(dataFile));
+				
+			}
+			
+			catch (Exception e) {
+				
+			}
+		}
+		
+		public void write(String outputFile)
+	}
+	
+	public class Application 
+
+}

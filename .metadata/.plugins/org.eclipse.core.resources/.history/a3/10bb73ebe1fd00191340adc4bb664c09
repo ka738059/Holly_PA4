@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Holly_P2 {
+	public class DuplicateCounter {
+		
+		public void count(String dataFile) throws FileNotFoundException{
+			try {
+				String word;
+				ArrayList<String> stringsList = new ArrayList<>();
+				File data = new File(dataFile);
+				Scanner scnr = new Scanner(new FileReader(data));
+				HashMap<String, Integer> wordCounter = new HashMap<String, Integer>();
+				
+				while(scnr.hasNextLine()) {
+					word = scnr.nextLine();
+					
+					if(stringsList.contains(word))
+						wordCounter.put(word, wordCounter.get(word) + 1);
+					else 
+						wordCounter.put(word, 1);
+				}
+				scnr.close();
+				
+			}
+			
+			catch (Exception e) {
+				
+			}
+		}
+		
+		public void write(String outputFile) {
+			
+		}
+	}
+	
+	public class Application {
+		
+	}
+
+}

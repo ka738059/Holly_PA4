@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+
+public class Holly_P1 {
+	
+	
+	public class DuplicateRemover {
+		public void remove(String dataFile) {
+			
+			try {
+				ArrayList<String> stringsList = new ArrayList<>();
+				Scanner scnr = new Scanner(new FileReader(dataFile));
+				
+				while(scnr.hasNextLine())
+					stringsList.add(scnr.nextLine());
+				
+				Set<String> Strings = new HashSet<>(stringsList);
+				System.out.println(Strings);
+				scnr.close();
+			}
+			catch (Exception e) {
+				
+			}
+			
+			
+		}
+		
+		public void write(String outputFile) {
+			try { 
+				FileWriter writer = new FileWriter(outputFile);
+				
+				
+				writer.close();
+				
+			}
+			
+			catch (Exception f) {
+				
+			}
+		}
+	}
+	
+	public class Application {
+		public void main(String[] args) throws IOException {
+			
+			DuplicateRemover duplicateRemover = new DuplicateRemover();
+			
+			duplicateRemover.remove("problem1.txt");
+			duplicateRemover.write("unique_words.txt");
+			
+		}
+	}
+}

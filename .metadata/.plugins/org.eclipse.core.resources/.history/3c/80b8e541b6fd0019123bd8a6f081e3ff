@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+public class Holly_P1 {
+	
+	
+	public class DuplicateRemover {
+		public void remove(File dataFile) {
+			
+			try {
+				ArrayList<String> str = new ArrayList<>();
+				Scanner scnr = new Scanner(new FileReader(dataFile));
+				
+				while(scnr.hasNextLine())
+					str.add(scnr.nextLine());
+				
+				Set<String> Strings = new HashSet<>(str);
+				System.out.println(Strings);
+				scnr.close();
+			}
+			catch (Exception e) {
+				
+			}
+			
+			
+		}
+		
+		public void write(File outputFile) {
+			try { 
+				FileWriter writer = new FileWriter(outputFile);
+				
+			}
+			
+			catch (Exception f) {
+				
+			}
+		}
+	}
+	
+	public class Application {
+		public void main(String[] args) throws IOException {
+			
+			DuplicateRemover duplicateRemover = new DuplicateRemover();
+			
+			//Opening New Input File
+			File dataFile = new File("C:\\Users\\Kasey\\Desktop"); 
+			duplicateRemover.remove(dataFile);
+			
+		}
+	}
+}

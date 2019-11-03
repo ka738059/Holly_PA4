@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+public static class Holly_P1 {
+	
+	public static class DuplicateRemover {
+		
+		private Set<String> uniqueWords;
+		
+		public void remove(String dataFile) throws FileNotFoundException{
+			
+			try {
+				ArrayList<String> stringsList = new ArrayList<>();
+				File data = new File(dataFile);
+				Scanner scnr = new Scanner(new FileReader(data));
+				
+				while(scnr.hasNextLine())
+					stringsList.add(scnr.nextLine());
+				
+				uniqueWords = new HashSet<>(stringsList);
+				scnr.close();
+			}
+			catch (Exception e) {
+				
+			}
+			
+			
+		}
+		
+		public void write(String outputFile) throws FileNotFoundException {
+			try { 
+				FileWriter writer = new FileWriter(outputFile);
+				Iterator<String> iterate = uniqueWords.iterator();
+				
+				while(iterate.hasNext()) {
+					writer.write(iterate.next());
+				}
+				writer.close();
+			}
+			
+			catch (Exception f) {
+				
+			}
+		}
+	}
+	
+	public static class Application {
+		public static void main(String[] args) throws IOException {
+			
+			DuplicateRemover duplicateRemover = new DuplicateRemover();
+			
+			duplicateRemover.remove("C:\\Users\\Kasey\\Desktop\\input.txt\");
+			duplicateRemover.write("unique_words.txt");
+			
+		}
+	}
+}
